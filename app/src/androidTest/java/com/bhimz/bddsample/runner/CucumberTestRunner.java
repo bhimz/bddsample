@@ -2,22 +2,13 @@ package com.bhimz.bddsample.runner;
 
 import android.os.Bundle;
 
-import androidx.test.runner.AndroidJUnitRunner;
 
-import cucumber.api.android.CucumberInstrumentationCore;
+import cucumber.api.android.CucumberAndroidJUnitRunner;
 
-public class CucumberTestRunner extends AndroidJUnitRunner {
-    private final CucumberInstrumentationCore instrumentationCore = new CucumberInstrumentationCore(this);
+public class CucumberTestRunner extends CucumberAndroidJUnitRunner {
 
     @Override
     public void onCreate(Bundle arguments) {
-        instrumentationCore.create(arguments);
         super.onCreate(arguments);
-    }
-
-    @Override
-    public void onStart() {
-        waitForIdleSync();
-        instrumentationCore.start();
     }
 }

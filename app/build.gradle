@@ -33,8 +33,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     androidTestImplementation 'androidx.test:rules:1.2.0'
-    androidTestImplementation 'info.cukes:cucumber-android:1.2.5'
-    androidTestImplementation 'info.cukes:cucumber-picocontainer:1.2.5'
+    androidTestImplementation "io.cucumber:cucumber-android:$cucumber_version"
+    androidTestImplementation "io.cucumber:cucumber-picocontainer:$cucumber_version"
 }
 
 def getInstrumentation() {
