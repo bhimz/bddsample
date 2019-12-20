@@ -21,8 +21,12 @@ class LoginActivity : AppCompatActivity() {
             val username = txtUsername.text.toString()
             val password = txtPassword.text.toString()
             val user = userRepository.getUserByUsername(username)
-            val welcomeText = "Welcome, $username"
-            txtWelcome.text = welcomeText
+            val descriptionText = if(user != null && user.password == password) {
+                "Welcome, $username"
+            } else {
+                "Your username/password is not valid"
+            }
+            txtWelcome.text = descriptionText
             txtWelcome.visibility = View.VISIBLE
         }
     }
