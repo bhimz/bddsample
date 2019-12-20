@@ -8,15 +8,33 @@ import androidx.test.espresso.assertion.ViewAssertions.*
 import androidx.test.rule.ActivityTestRule
 import com.bhimz.bddsample.LoginActivity
 import com.bhimz.bddsample.R
+import cucumber.api.Scenario
+import cucumber.api.java.After
+import cucumber.api.java.Before
 import cucumber.api.java.en.Given
 import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 import io.cucumber.datatable.DataTable
+import org.koin.test.KoinTest
 
 
-class LoginSteps {
+class LoginSteps:KoinTest {
 
     private val testRule: ActivityTestRule<LoginActivity> = ActivityTestRule(LoginActivity::class.java)
+
+    @Before
+    fun setup(scenario: Scenario) {
+        println("=============================================")
+        println(" Scenario: ${scenario.name}")
+        println("=============================================")
+    }
+
+    @After
+    fun tearDown(scenario: Scenario) {
+        println("=============================================")
+        println(" Scenario: ${scenario.name} - status: ${scenario.status}")
+        println("=============================================")
+    }
 
     @Given("^User open login page$")
     fun openLoginPage() {
