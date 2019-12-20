@@ -9,4 +9,4 @@ Feature: User login
     And I clicked on password field
     And I enter password "test123"
     And I clicked login button
-    Then I see successful login message
+    Then I see successful login message saying "Welcome, test"

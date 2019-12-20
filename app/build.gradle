@@ -37,6 +37,8 @@ dependencies {
     androidTestImplementation "io.cucumber:cucumber-android:$cucumber_version"
     androidTestImplementation "io.cucumber:cucumber-picocontainer:$cucumber_version"
     androidTestImplementation ("org.koin:koin-test:$koin_version") { exclude group: 'org.mockito' }
+    androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
+    androidTestImplementation 'org.mockito:mockito-android:2.23.0'
 }
 
 def getInstrumentation() {
