@@ -36,7 +36,7 @@ class LoginSteps {
         robot.launchLogin()
     }
 
-    @Given("^Has the following user credentials$")
+    @Given("^The following user credentials are valid$")
     fun populateUserCredentials(dataTable: DataTable) {
         val credentials: List<Map<String, String>> = dataTable.asMaps(String::class.java, String::class.java)
         for (credential in credentials) {

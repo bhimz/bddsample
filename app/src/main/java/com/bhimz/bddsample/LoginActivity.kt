@@ -16,6 +16,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         btnLogin.setOnClickListener {
             if (txtPassword.text.isNullOrEmpty() || txtUsername.text.isNullOrEmpty()) {
+                txtWelcome.text = "Your username/password is not valid"
+                txtWelcome.visibility = View.VISIBLE
                 return@setOnClickListener
             }
             val username = txtUsername.text.toString()
